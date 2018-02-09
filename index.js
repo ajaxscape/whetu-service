@@ -56,5 +56,5 @@ wss.on('connection', function (ws) {
     const data = await game.state(id, viewport, radar)
     ws.send(JSON.stringify({type: 'state', data}))
   }
-}, 50)
+}, 10)
 })
