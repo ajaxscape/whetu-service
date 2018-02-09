@@ -1,0 +1,22 @@
+{
+  "name": "whetu-service",
+  "version": "0.1.0",
+  "description": "Service for Whetu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajaxscape/whetu-service.git"
+  },
+  "author": "Ben Surgison",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajaxscape/whetu-service/issues"
+  },
+  "homepage": "https://github.com/ajaxscape/whetu-service#readme",
+  "dependencies": {
+    "whetu-engine": "^0.1.0"
+  }
+}
