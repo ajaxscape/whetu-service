@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/ajaxscape/whetu-service#readme",
   "dependencies": {
-    "whetu-engine": "^0.1.0"
+    "whetu-engine": "^0.1.0",
+    "ws": "^4.0.0"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
   }
 }
