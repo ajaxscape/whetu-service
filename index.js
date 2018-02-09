@@ -53,7 +53,7 @@ wss.on('connection', function (ws) {
   })
   setInterval(async () => {
     if (id && viewport && radar && ws.readyState === WebSocket.OPEN) {
-    const data = await game.getState(id, viewport, radar)
+    const data = await game.state(id, viewport, radar)
     ws.send(JSON.stringify({type: 'state', data}))
   }
 }, 50)
