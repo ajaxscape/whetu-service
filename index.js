@@ -1,4 +1,4 @@
-const WebSocket = require('ws');
+const WebSocket = require('ws')
 const PORT = process.env.PORT || 40510
 const wss = new WebSocket.Server({port: PORT})
 const game = require('whetu-engine')
@@ -53,8 +53,8 @@ wss.on('connection', function (ws) {
   })
   setInterval(async () => {
     if (id && viewport && radar && ws.readyState === WebSocket.OPEN) {
-    const data = await game.state(id, viewport, radar)
-    ws.send(JSON.stringify({type: 'state', data}))
-  }
-}, 10)
+      const data = await game.state(id, viewport, radar)
+      ws.send(JSON.stringify({type: 'state', data}))
+    }
+  }, 10)
 })
