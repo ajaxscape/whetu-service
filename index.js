@@ -1,6 +1,7 @@
 const WebSocket = require('ws')
 const PORT = process.env.PORT || 40510
 const wss = new WebSocket.Server({port: PORT})
+const stringify = require('json-stringify-safe')
 const game = require('whetu-engine')
 
 game.start()
@@ -24,7 +25,7 @@ wss.on('connection', function (ws) {
   let id
   let viewport
   let radar
-  ws.send(JSON.stringify({type: 'ping'}))
+  ws.send(stringify({type: 'ping'}))
   ws.on('message', function (message) {
     try {
       const {type, data} = JSON.parse(message)
@@ -38,12 +39,12 @@ wss.on('connection', function (ws) {
         case 'join': {
           const data = game.join()
           id = data.id
-          ws.send(JSON.stringify({type: 'joined', data}))
+          ws.send(stringify({type: 'joined', data}))
           break
         }
         case 'pong': {
           console.log('pong')
-          setTimeout(() => ws.send(JSON.stringify({type: 'ping'})), 10000)
+          setTimeout(() => ws.send(stringify({type: 'ping'})), 10000)
           break
         }
       }
@@ -54,7 +55,7 @@ wss.on('connection', function (ws) {
   setInterval(async () => {
     if (id && viewport && radar && ws.readyState === WebSocket.OPEN) {
       const data = await game.state(id, viewport, radar)
-      ws.send(JSON.stringify({type: 'state', data}))
+      ws.send(stringify({type: 'state', data}))
     }
   }, 50)
 })
