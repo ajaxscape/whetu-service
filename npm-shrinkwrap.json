@@ -1646,9 +1646,9 @@
       "dev": true
     },
     "whetu-engine": {
-      "version": "0.1.8",
-      "resolved": "https://registry.npmjs.org/whetu-engine/-/whetu-engine-0.1.8.tgz",
-      "integrity": "sha512-IZBUMwJDx+Q/Qx+S4V2lWDBuFfO3dRf+B1qN1vxGCcLNZQMe2gO+Adis5C4j2v6EFpVRYag27jRUmuweARsLAg==",
+      "version": "0.1.9",
+      "resolved": "https://registry.npmjs.org/whetu-engine/-/whetu-engine-0.1.9.tgz",
+      "integrity": "sha512-qUNBuuUt7Cf2k16T5p/z7JWcg1nxZt+WMabqc0/hJyu0ZtwAXxoDks+1izDHuGDC0FmpZTauwPhzIdx62IH0Zw==",
       "requires": {
         "uuid": "3.2.1"
       },
