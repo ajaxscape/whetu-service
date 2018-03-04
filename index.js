@@ -8,19 +8,6 @@ game.start()
 
 console.log(`service on port ${PORT}`)
 
-// wss.broadcast = function broadcast () {
-//   wss.clients.forEach(function each (client) {
-//     if (client.readyState === WebSocket.OPEN) {
-//       const data = game.getState()
-//       client.send(JSON.stringify({type: 'state', data}))
-//     }
-//   })
-// }
-
-// setInterval(() => {
-//   wss.broadcast()
-// }, 40)
-
 wss.on('connection', function (ws) {
   let id
   let viewport
@@ -40,11 +27,6 @@ wss.on('connection', function (ws) {
           const data = game.join()
           id = data.id
           ws.send(stringify({type: 'joined', data}))
-          break
-        }
-        case 'pong': {
-          console.log('pong')
-          setTimeout(() => ws.send(stringify({type: 'ping'})), 10000)
           break
         }
       }
